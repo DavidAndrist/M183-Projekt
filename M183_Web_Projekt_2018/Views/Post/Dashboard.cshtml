@@ -1,0 +1,27 @@
+﻿
+@{  
+    ViewBag.Title = "Dashboard";
+}
+
+
+<div class="row" style="margin-top:80px;">
+    <div class="col-lg-8 col-lg-offset-2">
+        <table class="table table-hover">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Content</th>
+                <th>Detailansicht</th>
+            </tr>
+            @foreach (var post in Model)
+            {
+                <tr>
+                    <td>@post.Title</td>
+                    <td>@post.Description</td>
+                    <td>@post.Content</td>
+                    <td>@Html.ActionLink("Details", "DetailPost", "Post", new { id = post.Id }, null)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
